@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { FaUser, FaTools, FaProjectDiagram, FaEnvelope } from "react-icons/fa";
 import "../styles/Navbar.css";
 
 const Navbar = () => {
@@ -11,6 +12,21 @@ const Navbar = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const handleNavClick = (e, sectionId) => {
+    e.preventDefault();
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const navItems = [
+    { id: "about-me", text: "About", icon: <FaUser /> },
+    { id: "skills", text: "Skills", icon: <FaTools /> },
+    { id: "projects", text: "Projects", icon: <FaProjectDiagram /> },
+    { id: "contact", text: "Contact", icon: <FaEnvelope /> },
+  ];
 
   return (
     <>
@@ -25,24 +41,17 @@ const Navbar = () => {
           </div>
 
           <div className="nav-links">
-            <a href="#about" className="nav-link">
-              About
-            </a>
-            <a href="#skills" className="nav-link">
-              Skills
-            </a>
-            <a href="#projects" className="nav-link">
-              Projects
-            </a>
-            <a href="#hobbies" className="nav-link">
-              Hobbies
-            </a>
-            <a href="#timeline" className="nav-link">
-              Timeline
-            </a>
-            <a href="#contact" className="nav-link">
-              Contact
-            </a>
+            {navItems.map((item) => (
+              <a
+                key={item.id}
+                href={`#${item.id}`}
+                className="nav-link"
+                onClick={(e) => handleNavClick(e, item.id)}
+              >
+                <span className="nav-icon">{item.icon}</span>
+                <span className="nav-text">{item.text}</span>
+              </a>
+            ))}
           </div>
         </div>
       </nav>

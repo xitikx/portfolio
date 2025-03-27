@@ -1,21 +1,26 @@
-import { db } from "./firebase/firebaseConfig"; 
-import Skills from "./components/Skills";
-import Profile from "./components/Profile";
-import Hobbies from "./components/Hobbies";
-import Projects from "./components/Projects";
+import AboutMe from "./components/AboutMe";
 import Navbar from "./components/Navbar";
-import './App.css';
-import Researches from "./components/Researches";
+import "./App.css";
+import SkillsAndHobbies from "./components/SkillsAndHobbies";
+import ProjectsAndResearches from "./components/ProjectsAndResearches";
+import Contact from "./components/Contact";
 
 function App() {
   return (
     <div className="App">
       <Navbar />
-      <Profile />
-      <Skills />
-      <Hobbies />
-      <Projects />
-      <Researches />
+      <div id="about-me">
+        <AboutMe />
+      </div>
+      <div id="skills">
+        <SkillsAndHobbies />
+      </div>
+      <div id="projects">
+        <ProjectsAndResearches />
+      </div>
+      <div id="contact">
+        <Contact />
+      </div>
     </div>
   );
 }
