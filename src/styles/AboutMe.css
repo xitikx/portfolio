@@ -158,9 +158,9 @@
 }
 
 .social-icon {
-  font-size: 2rem;
+  font-size: 50rem;
   color: #d1d5db;
-  padding: 0.5rem;
+  padding: 0.1rem;
   border-radius: 50%;
   transition: all 0.3s ease;
 }
