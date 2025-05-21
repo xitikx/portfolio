@@ -130,7 +130,7 @@ const AboutMe = () => {
                   )}
                   {profile.techInterests?.length > 0 && (
                     <p className="tech-interests-text">
-                      // I work with{" "}
+                      
                       <span className="tech-interest-highlight">
                         {profile.techInterests[currentInterest]}
                       </span>
